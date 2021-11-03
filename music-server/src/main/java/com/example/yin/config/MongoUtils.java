@@ -4,6 +4,8 @@ import com.mongodb.client.gridfs.GridFSBucket;
 import com.mongodb.client.gridfs.GridFSBuckets;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.stereotype.Component;
 
@@ -38,5 +40,11 @@ public class MongoUtils {
 
     public static Object save(Object obj, String  col){
         return mongoUtils.mongoTemplate.save(obj,col);
+    }
+
+    public static Object findbyId(Class ojb,Object value ,String collectionsname){
+        Criteria criteria = Criteria.where("_id").is(value);
+        Query query = Query.query(criteria);
+        return mongoUtils.mongoTemplate.findOne(query,ojb,collectionsname);
     }
 }

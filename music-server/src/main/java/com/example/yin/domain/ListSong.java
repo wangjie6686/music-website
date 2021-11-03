@@ -1,9 +1,13 @@
 package com.example.yin.domain;
 
+import lombok.Data;
+import lombok.ToString;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.io.Serializable;
 
+@Data
+@ToString
 public class ListSong implements Serializable {
 
     private Integer id;
@@ -11,33 +15,4 @@ public class ListSong implements Serializable {
     private Integer songId;
 
     private Integer songListId;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getSongId() {
-        return songId;
-    }
-
-    public void setSongId(Integer songId) {
-        this.songId = songId;
-    }
-
-    public Integer getSongListId() {
-        return songListId;
-    }
-
-    public void setSongListId(Integer songListId) {
-        this.songListId = songListId;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this);
-    }
 }

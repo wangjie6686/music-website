@@ -21,12 +21,12 @@ public class MongoTestController {
 
         System.out.println("id: "+id + "---name:"+name + "---type:"+type );
 
-        MongoInfo info = new MongoInfo();
+     /*   MongoInfo info = new MongoInfo();
         info.setId(id);
         info.setName(name);
         info.setType(type);
         MongoUtils.save(info,"cr_music");
-        System.out.println("end--------------");
+        System.out.println("end--------------");*/
 
     }
 }
